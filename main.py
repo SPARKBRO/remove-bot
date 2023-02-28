@@ -16,7 +16,7 @@ def main():
     config = Config()
 
     # Connect to the database
-    db = Database(config.DATABASE_URL)
+    db = Database(config.MONGODB_URL)
 
     # Create the Telegram bot
     updater = Updater(config.BOT_TOKEN, use_context=True)
