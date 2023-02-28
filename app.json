@@ -11,7 +11,7 @@
     ],
     "repository": "https://github.com/SPARKBRO/remove-bot",
     "website": "https://telegram.dog/SPA4KBRO",
-    "success_url": "https://t.me/idzeroid",
+    "success_url": "https://t.me/SPA4KBRO",
     "env": {
         "API_ID": {
             "description": "Get this value from my.telegram.org"
@@ -22,7 +22,7 @@
         "BOT_TOKEN": {
             "description": "Get this from @BotFather"
         },
-        "DATABASE_URL": {
+        "MONGO_URL": {
             "description": "MongoDB URI for Saving Chat Settings."
         }
     },
