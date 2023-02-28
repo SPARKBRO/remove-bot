@@ -1,23 +1,108 @@
 {
-  "name": "telegram-bot-russian-alphabet-remover",
-  "description": "Telegram bot to remove users with Russian alphabet in their names.",
-  "repository": "",
-  "keywords": ["telegram", "bot"],
-  "env": {
-    "BOT_TOKEN": {
-      "description": "Token for the Telegram bot.",
-      "required": true
-    }
-  },
-  "addons": {
-    "heroku-postgresql": {
-      "version": "12",
-      "plan": "hobby-dev"
-    }
-  },
-  "buildpacks": [
+
+  "name": "remove-bot",
+
+  "description": "Telegram bot that removes users with Russian alphabet in their names from a channel",
+
+  "repository": "https://github.com/SPARKBRO/remove-bot.git",
+
+  "logo": "https://i.imgur.com/RM2RuZZ.png",
+
+  "addons": [
+
     {
-      "url": "heroku/python"
+
+      "plan": "heroku-postgresql",
+
+      "as": "DATABASE",
+
+      "options": {
+
+        "version": "12"
+
+      }
+
+    },
+
+    {
+
+      "plan": "mongolab:sandbox",
+
+      "as": "MONGODB"
+
     }
+
+  ],
+
+  "env": {
+
+    "API_ID": {
+
+      "description": "Telegram API ID",
+
+      "value": ""
+
+    },
+
+    "API_HASH": {
+
+      "description": "Telegram API hash",
+
+      "value": ""
+
+    },
+
+    "BOT_TOKEN": {
+
+      "description": "Telegram bot token",
+
+      "value": ""
+
+    },
+
+    "DATABASE_URL": {
+
+      "description": "URL of the PostgreSQL database",
+
+      "value": {"from": "DATABASE", "select": "credentials.uri"}
+
+    },
+
+    "MONGO_URI": {
+
+      "description": "URL of the MongoDB database",
+
+      "value": {"from": "MONGODB", "select": "uri"}
+
+    }
+
+  },
+
+  "buildpacks": [
+
+    {
+
+      "url": "heroku/python"
+
+    }
+
   ]
+
 }
+
+
+ 
+    
+  
+
+
+      
+
+    
+ 
+
+    
+
+  
+  
+
