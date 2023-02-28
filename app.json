@@ -1,108 +1,40 @@
 {
-
-  "name": "remove-bot",
-
-  "description": "Telegram bot that removes users with Russian alphabet in their names from a channel",
-
-  "repository": "https://github.com/SPARKBRO/remove-bot.git",
-
-  "logo": "https://i.imgur.com/RM2RuZZ.png",
-
-  "addons": [
-
-    {
-
-      "plan": "heroku-postgresql",
-
-      "as": "DATABASE",
-
-      "options": {
-
-        "version": "12"
-
-      }
-
+    "name": "A telegram-bot-russian-alphabet-remover",
+    "description": "Telegram bot to remove users with Russian alphabet in their names.",
+    "keywords": [
+        "telegram",
+        "AntiChannel",
+        "channel",
+        "Group",
+        "manager",
+        "bot"
+    ],
+    "repository": "https://github.com/anfargaming/remove-bot",
+    "website": "https://telegram.dog/anfar_mohammed",
+    "success_url": "https://t.me/idzeroid",
+    "env": {
+        "API_ID": {
+            "description": "Get this value from my.telegram.org"
+        },
+        "API_HASH": {
+            "description": "Get this value from my.telegram.org"
+        },
+        "BOT_TOKEN": {
+            "description": "Get this from @BotFather"
+        },
+        "DATABASE_URL": {
+            "description": "MongoDB URI for Saving Chat Settings."
+        }
     },
-
-    {
-
-      "plan": "mongolab:sandbox",
-
-      "as": "MONGODB"
-
+    "buildpacks": [
+        {
+            "url": "heroku/python"
+        }
+    ],
+    "formation": {
+        "worker": {
+            "quantity": 1,
+            "size": "free"
+        }
     }
-
-  ],
-
-  "env": {
-
-    "API_ID": {
-
-      "description": "Telegram API ID",
-
-      "value": ""
-
-    },
-
-    "API_HASH": {
-
-      "description": "Telegram API hash",
-
-      "value": ""
-
-    },
-
-    "BOT_TOKEN": {
-
-      "description": "Telegram bot token",
-
-      "value": ""
-
-    },
-
-    "DATABASE_URL": {
-
-      "description": "URL of the PostgreSQL database",
-
-      "value": {"from": "DATABASE", "select": "credentials.uri"}
-
-    },
-
-    "MONGO_URI": {
-
-      "description": "URL of the MongoDB database",
-
-      "value": {"from": "MONGODB", "select": "uri"}
-
-    }
-
-  },
-
-  "buildpacks": [
-
-    {
-
-      "url": "heroku/python"
-
-    }
-
-  ]
-
 }
-
-
- 
-    
-  
-
-
-      
-
-    
- 
-
-    
-
-  
-  
-
