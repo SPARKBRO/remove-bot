@@ -1,0 +1,25 @@
+# Python
+*.pyc
+pycache/
+venv/
+env/
+*.env
+
+# Logs
+*.log
+
+# Runtime data
+*.pid
+*.swp
+*.db
+
+# Local development
+.idea/
+
+# Docker
+Dockerfile
+docker-compose.yml
+.env
+
+# Dependencies
+.venv
