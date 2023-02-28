@@ -1,0 +1,23 @@
+{
+  "name": "telegram-bot-russian-alphabet-remover",
+  "description": "Telegram bot to remove users with Russian alphabet in their names.",
+  "repository": "",
+  "keywords": ["telegram", "bot"],
+  "env": {
+    "BOT_TOKEN": {
+      "description": "Token for the Telegram bot.",
+      "required": true
+    }
+  },
+  "addons": {
+    "heroku-postgresql": {
+      "version": "12",
+      "plan": "hobby-dev"
+    }
+  },
+  "buildpacks": [
+    {
+      "url": "heroku/python"
+    }
+  ]
+}
